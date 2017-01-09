@@ -1,0 +1,54 @@
+/**
+ * Created by iMac
+ * 火一五信息科技有限公司
+ * 联系方式:15288986891
+ * QQ:3186355915
+ * web:http://host.huo15.com
+ * 日期：2017/1/9
+ */
+
+#header {
+    background:url("../../images/header-bg.png") repeat-x 0 98px #1d6aea;
+
+}
+.hd_main .intro li h4 {
+    font-weight: bold;
+    font-size: 12px;
+    color:#fff;
+}
+.hd_main .intro li p {
+    color: #ddd;
+}
+.head_search_hot span {
+    color: #fce736;
+}
+.head_search_hot a {
+    margin: 0 8px 0 5px;
+    color: #ffce44;
+}
+
+.hd_nav {
+    background-color: #2083e9;
+    height: 35px;
+}
+.hd_nav .sub_nav li.current a, .hd_nav .sub_nav li a:hover {
+    color: #fff;
+    background-color: #084079;
+    text-decoration: none;
+}
+.hide {
+    display: none;
+}
+.series_info .name_hufu {
+    background-color: #084079;
+}
+.side-bar {
+    border: 1px solid #E7E7E7;
+    border-bottom: none;
+    bottom: 190px;
+    background: #fff;
+}
+#footer .w-ensure {
+    background: #084079 none repeat scroll 0 0;
+    height: 90px;
+}
