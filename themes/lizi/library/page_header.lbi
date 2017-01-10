@@ -1,5 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/9 -->
 <link href="themes/lizi/huo15/css/common.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="themes/lizi/huo15/css/font-awesome.css">
+<!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/9 end -->
 <script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/jquery.json.js"></script>
 <script type="text/javascript" src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/js/transport_jquery.js"></script>
@@ -62,16 +65,7 @@
   <div class="hd_main cle">
     <div class="logo"> <a href="./" class="lizi_logo"><img src="../images/logo.png" alt="{$shop_name}"/></a>
     </div>
-    <div class="search_box">
-      <form action="search.php" method="get" id="searchForm" name="searchForm" onSubmit="return checkSearchForm()">
-        <input class="sea_input" type="text" name="keywords" id="keyword" value="{$search_keywords|escape}" autocomplete="off">
-        <input type="hidden" value="k1" name="dataBi">
-        <button type="submit" class="sea_submit">搜索</button>
-      </form>
-    </div>
-    {if $searchkeywords}
-    <div class="head_search_hot"> <span>{$lang.hot_search}：</span> {foreach from=$searchkeywords item=val} <a href="search.php?keywords={$val|escape:url}" target="_blank">{$val}</a> {/foreach} </div>
-    {/if}
+
     <div class="intro">
       <ul>
         <li class="no1"><a href="javascript:void(0);" target="_blank">
@@ -92,12 +86,14 @@
   <div class="hd_nav">
     <div class="hd_nav_bd cle">
       <div class="main_nav" id="main_nav">
-        <div class="main_nav_link"> <a href="javascript:;">全部商品分类</a> <i class="iconfont"></i> </div>
+        <div class="main_nav_link"> <span class="icon-th-list"></span><a href="javascript:;">全部商品分类</a> <i class="iconfont"></i> </div>
         <div class="main_cata" id="J_mainCata" style="opacity: 0; display: none;">
+
           <ul>
             <!--{foreach from=$categories item=cat name=foo}-->
             <li {if $smarty.foreach.foo.first}class="first"{/if}>
-              <h3 style="background:url(data/cat_ico/{$cat.cat_ico}) 20px center no-repeat;"><a href="{$cat.url}">{$cat.name|escape:html}</a></h3>
+              <!--<h3 style="background:url(data/cat_ico/{$cat.cat_ico}) 20px center no-repeat;"><a href="{$cat.url}">{$cat.name|escape:html}</a></h3>-->
+               <h3 ><i class="icon-circle"></i><a href="{$cat.url}">{$cat.name|escape:html}</a></h3>
             </li>
             <!--{/foreach}-->
           </ul>
@@ -127,7 +123,19 @@
 
 
       </div>
-      <ul class="sub_nav cle" id="sub_nav">
+      <!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/10 -->
+      <div class="search-wrapper">
+        <div class="search_box">
+          <form action="search.php" method="get" id="searchForm" name="searchForm" onSubmit="return checkSearchForm()">
+            <input class="sea_input" type="text" name="keywords" id="keyword" value="{$search_keywords|escape}" autocomplete="off" placeholder="请输入关键词">
+            <input type="hidden" value="k1" name="dataBi">
+            <button type="submit" class="sea_submit"><i class="icon-search icon-large"></i></button>
+          </form>
+        </div>
+
+      </div>
+      <!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/10 end -->
+      <ul class="sub_nav cle hide" id="sub_nav">
         <li{if $navigator_list.config.index eq 1} class="current"{/if}><a href="./" rel="nofollow">{$lang.home}</a>
         </li>
         <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
@@ -142,3 +150,80 @@
   </div>
   <div class="search_result"></div>
 </div>
+<!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/10 -->
+
+
+<div class="newsCenter-wrapper">
+    <div class="newsCenter">
+
+        <ul>
+          <!--{foreach from=$huo15_news item=article}-->
+          <li>【新闻中心】<a href="{$article.url}" title="{$article.title|escape:html|truncate:15:true}"><!--{$article.short_title|truncate:15:true}--></a></li>
+          <!--{/foreach}-->
+        </ul>
+    </div>
+</div>
+
+<script>
+  $(function () {
+    // 火一五信息科技 huo15.com Created by zhaobo on 2017/1/10.
+//    分类树色条样式
+    $(".main_cata li:even").css({
+        background:"#daf8f0"
+    })
+    $("#J_subCata").remove();
+
+
+
+      //暂时隐藏客服浮窗
+      $("#side-bar").hide();
+
+
+    //自动滚动。
+    var auto_time = setInterval("newsCenterutomove()",3000);
+    //初始化Li的位置
+    $(".newsCenter ul li").each(function(index,element) {
+      var holeHeight = $(".newsCenter").height();
+      //alert ($(this).css('top'));
+      var oldtop = $(this).css('top');
+//      console.log("oldtop",oldtop)
+      var pp = /px/g;
+      var newtop =Number(oldtop.replace(pp,""))+44*index; //44是li的高度
+      $(this).css("top",newtop + "px");
+
+    });
+    $(".newsCenter ul").hover();
+
+
+
+
+  });
+
+
+  //逐步移动
+  function newsCenterutomove()
+  {
+
+    $(".newsCenter ul li").each(function() {
+        var holeHeight = $(".newsCenter").height();
+        //alert ($(this).css('top'));
+        var oldtop = $(this).css('top');
+//        console.log("oldtop",oldtop)
+        var pp = /px/g;
+        var newtop =Number(oldtop.replace(pp,""))+44; //44是li的高度
+//      console.log("newtop",newtop)
+        if ( newtop > holeHeight )
+        {
+
+          $(this).css("top","0px");
+        }
+        else
+        {
+
+          $(this).css("top",newtop+"px");
+        }
+
+      });
+  }
+</script>
+<!-- 青岛火一五信息科技有限公司huo15.com 日期：2017/1/10 end -->
