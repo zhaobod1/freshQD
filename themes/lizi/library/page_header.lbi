@@ -160,6 +160,11 @@
           <!--{foreach from=$huo15_news item=article}-->
           <li>【新闻中心】<a href="{$article.url}" title="{$article.title|escape:html|truncate:15:true}"><!--{$article.short_title|truncate:15:true}--></a></li>
           <!--{/foreach}-->
+          {if !$huo15_news}
+          <li>【渔湾仔】欢迎您光临本店</li>
+          <li>【渔湾仔】竭诚为您服务</li>
+          <li>【渔湾仔】提供最新鲜品质，为了客户最满意</li>
+          {/if}
         </ul>
     </div>
 </div>
@@ -179,8 +184,7 @@
       $("#side-bar").hide();
 
 
-    //自动滚动。
-    var auto_time = setInterval("newsCenterutomove()",3000);
+
     //初始化Li的位置
     $(".newsCenter ul li").each(function(index,element) {
       var holeHeight = $(".newsCenter").height();
@@ -192,7 +196,13 @@
       $(this).css("top",newtop + "px");
 
     });
-    $(".newsCenter ul").hover();
+    //自动滚动。
+    var auto_time = setInterval("newsCenterutomove()",3000);
+    $(".newsCenter ul").hover(function () {
+      clearInterval(auto_time);
+    },function () {
+      auto_time = setInterval("newsCenterutomove()",3000);
+    });
 
 
 
