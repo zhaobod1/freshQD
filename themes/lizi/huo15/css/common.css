@@ -240,7 +240,7 @@
     font-size: 13px;
     /*margin-left: 10px;*/
     display: inline-block;
-    font-family: Arial;
+    font-family: "微软雅黑";
     color: #666;
 }
 
@@ -357,13 +357,13 @@
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    height:34px;
+    height:46px;
     margin-top:14px;
     margin-bottom:14px;
 }
 #promotion_a {
-    line-height:34px;
-    font-size:16px;
+    line-height:46px;
+    font-size:18px;
 
 }
 #promotion_a span {
@@ -569,4 +569,77 @@
     border: 1px solid #ccc;
     z-index: 999;
     top: 0;
+}
+
+/*购物车 流程图*/
+.top-next {
+    color: #666;
+    padding-bottom: 10px;
+    padding-left:5px;
+    background: #222222;
+}
+.step-wrapper {
+    padding:3px;
+    padding-bottom:0px;
+
+}
+.step-wrapper .hd-step {
+    float: right;
+    width: 500px;
+    padding-top: 0px;
+}
+.top-next .fr{
+    padding:5px 5px 0 0 ;
+}
+
+.top-next .fr .btn:hover, .top-next .fr .btn-css3:hover {
+    text-decoration: none;
+    color: #fff;
+    background: #084079;
+}
+
+.top-next .fr .btn, .top-next .fr .btn-css3 {
+    display: inline-block;
+    padding: 5px 12px;
+    height: 16px;
+    line-height: 16px;
+    _line-height: 18px;
+    border: 1px solid #1c204d;
+    border-radius: 3px;
+    font-size: 100%;
+    color: #fff;
+    background-color: #2083e9;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+
+
+/*flow.php 主体部分*/
+#main {
+    width: 1240px;
+    margin: 30px auto 50px;
+}
+.goods-list li {
+    zoom: 1;
+    width: 1206px;
+    border-bottom: 1px dotted #cbcbcb;
+    color: #666;
+    padding: 10px;
+}
+
+
+/*收货人信息 flow.php?step=consignee*/
+.cart_main {
+    width: 1178px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(204,204,204,0.5);
+    padding: 15px 30px;
+    margin: 30px auto 50px;
+}
+.aui_outer {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
