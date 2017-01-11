@@ -31,10 +31,10 @@
 
 
 .hd_nav .hd_nav_bd {
-    padding-left: 214px;
+    padding-left:0;
     position: relative;
     z-index: 1990;
-    width: 1020px;
+    width: 1240px;
     margin: 0 auto;
 }
 
@@ -115,7 +115,7 @@
 }
 /*修改分类树*/
 .hd_nav .main_nav .main_nav_link {
-    width: 214px;
+    width: 212px;
     height: 50px;
     margin-top: 15px;
     color: #fff;
@@ -158,9 +158,9 @@
 
 }
 #header.new_header .search_box {
-    left:230px;
+    left:224px;
     top: 15px;
-    width: 922px;
+    width: 927px;
     height: 50px;
     border-color: #fff;
     border-width: 1px;
@@ -168,6 +168,7 @@
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
+    box-shadow: none;
 }
 #header .search_box .sea_submit {
     font-size: 15px;
@@ -194,6 +195,12 @@
     height:40px;
     line-height: 40px;
     font-size: 16px;
+}
+#header.new_header .search_box .sea_input {
+    margin: 7px 8px 0;
+    border:none;
+    background: none;
+    outline: 0;
 }
 /* 分类树 */
 .main_cata {
@@ -247,7 +254,7 @@
 }
 .hd_cart .tit {
     display: block;
-    width: 55px;
+    width: 66px;
     height: 38px;
     padding-top: 10px;
     padding-left:10px;
@@ -543,4 +550,23 @@
     float: right;
     width: 1000px;
     background-color: #fff;
+}
+
+/*商品详情页 goods.php*/
+.z-detail-box {
+    width: 1240px;
+    margin: 0 auto;
+}
+.z-detail-left {
+    width: 1010px;
+    float: left;
+    background-color: #fff;
+}
+.tabs_bar {
+    height: 48px;
+    width: 1008px;
+    background: #f3f3f3;
+    border: 1px solid #ccc;
+    z-index: 999;
+    top: 0;
 }
