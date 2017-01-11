@@ -72,8 +72,47 @@
     height: 90px;
 }
 
+/*banner */
+.index-slide {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    background: url(images/loading_nala.gif) center center no-repeat;
+}
 
-
+.index-slide ul {
+    height:350px;
+    overflow:hidden
+}
+.index-slide li {
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    position:absolute;
+    left:0;
+    top:0;
+    background-position:center 0;
+    background-repeat:no-repeat
+}
+.index-slide li:first-child {
+    z-index:2
+}
+.index-slide li a {
+    display:block;
+    height:350px;
+    width:1196px;
+    margin:0 auto
+}
+.index-slide .trigger-box {
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 325px;
+    left: 50%;
+    z-index: 10;
+    margin-left: -200px;
+}
 /*修改分类树*/
 .hd_nav .main_nav .main_nav_link {
     width: 214px;
@@ -158,7 +197,7 @@
 }
 /* 分类树 */
 .main_cata {
-    margin-top:12px;
+    margin-top:15px;
     width: 214px;
     height: auto;
     opacity: 0;
@@ -271,7 +310,7 @@
 /*新闻中心*/
 .newsCenter-wrapper {
     height:44px;
-    margin:10px 0 10px 0;
+    margin:14px 0 14px 0;
     background: #3eb6e8;
     padding-left:240px;
     overflow: hidden;
@@ -285,7 +324,6 @@
 }
 .newsCenter-wrapper .newsCenter ul {
     position: relative;
-    height:44px;
     overflow: hidden;
 }
 .newsCenter-wrapper .newsCenter ul li {
@@ -298,6 +336,9 @@
 .w-max {
     width: 1240px;
 }
+.surprise-tit {
+    height: auto;
+}
 .promotion_title {
 
 }
@@ -309,6 +350,9 @@
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
+    height:34px;
+    margin-top:14px;
+    margin-bottom:14px;
 }
 #promotion_a {
     line-height:34px;
@@ -451,4 +495,52 @@
 }
 .heart-wrapper a:hover {
     color: #e92121;
+}
+
+
+/*内页样式*/
+/*category.php 内容页*/
+#wrapper {
+    width: 1240px;
+    margin: 10px auto 80px;
+}
+.maincon {
+    width: 1014px;
+    float: right;
+}
+.productlist {
+    width: 1014px;
+    overflow: hidden;
+}
+.productlist li {
+    width: 243px;
+    height: 342px;
+    position: relative;
+    float: left;
+    margin: 0 14px 14px 0;
+    overflow: hidden;
+    display: inline;
+}
+
+
+/*文章内容页 article.php*/
+.help_main {
+    padding-top: 10px;
+    width: 1240px;
+    margin: 0 auto;
+}
+.help_right {
+    width: 1000px;
+    background-color: #fff;
+    float: right;
+    border: 1px solid #e4e4e4;
+    text-align: left;
+}
+
+
+/*会员中心 user.php*/
+.my_nala_centre {
+    float: right;
+    width: 1000px;
+    background-color: #fff;
 }

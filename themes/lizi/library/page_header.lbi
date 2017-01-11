@@ -86,7 +86,7 @@
   <div class="hd_nav">
     <div class="hd_nav_bd cle">
       <div class="main_nav" id="main_nav">
-        <div class="main_nav_link"> <span class="icon-th-list"></span><a href="javascript:;">全部商品分类</a> <i class="iconfont"></i> </div>
+        <div class="main_nav_link"> <!-- <span class="icon-th-list"></span> --><a href="javascript:;">商城列表导航</a> <i class="iconfont"></i> </div>
         <div class="main_cata" id="J_mainCata" style="opacity: 0; display: none;">
 
           <ul>
@@ -181,18 +181,20 @@
 
 
       //暂时隐藏客服浮窗
-      $("#side-bar").hide();
+//      $("#side-bar").hide();
 
 
 
     //初始化Li的位置
+    $(".newsCenter ul").height(44*$(".newsCenter ul li").length)
     $(".newsCenter ul li").each(function(index,element) {
-      var holeHeight = $(".newsCenter").height();
+      var holeHeight = $(".newsCenter ul").height();
       //alert ($(this).css('top'));
       var oldtop = $(this).css('top');
-//      console.log("oldtop",oldtop)
+      console.log("oldtop",oldtop,"index",index)
       var pp = /px/g;
       var newtop =Number(oldtop.replace(pp,""))+44*index; //44是li的高度
+      console.log("newtop",newtop)
       $(this).css("top",newtop + "px");
 
     });
@@ -216,13 +218,13 @@
 
     $(".newsCenter ul li").each(function() {
         var holeHeight = $(".newsCenter").height();
-        //alert ($(this).css('top'));
+        console.log("AUTO_holeHeight",holeHeight)
         var oldtop = $(this).css('top');
-//        console.log("oldtop",oldtop)
+        console.log("AUTO_oldtop",oldtop)
         var pp = /px/g;
         var newtop =Number(oldtop.replace(pp,""))+44; //44是li的高度
 //      console.log("newtop",newtop)
-        if ( newtop > holeHeight )
+        if ( newtop >= holeHeight )
         {
 
           $(this).css("top","0px");
