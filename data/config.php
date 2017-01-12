@@ -88,7 +88,7 @@ define('AUTH_KEY', 'this is a key');
 
 define('OLD_AUTH_KEY', '');
 
-define('API_TIME', '2017-01-10 22:39:28');
+define('API_TIME', '2017-01-12 09:17:52');
 /**
 0 关闭debug
 1 显示错误信息
